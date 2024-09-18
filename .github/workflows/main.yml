@@ -41,3 +41,12 @@ jobs:
       - run: npm test
         env:
           CI: true
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: Artifacts 
+          path: |
+            ./.nyc_output/
+            ./coverage/
+          retention-days: 5
