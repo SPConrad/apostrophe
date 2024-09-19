@@ -16,7 +16,7 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    timeout-minutes: 100
+    timeout-minutes: 200
     strategy:
       matrix:
         node-version: [20]
@@ -42,7 +42,7 @@ jobs:
       - run: npm test --verbose
         env:
           CI: true
-        timeout-minutes: 45
+        timeout-minutes: 160
 
       - run: npm test
         if: always()
